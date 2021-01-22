@@ -10,15 +10,15 @@ class LeaveList(generics.ListCreateAPIView):
     serializer_class = LeaveSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
-    # def post(self, request, *args, **kwargs):
-    #     start_date = self.request.data.get('start_date')
-    #     end_date = self.request.data.get('end_date')
-    #     leave_type = self.request.data.get('leave_type')
-    #     note = self.request.data.get('note')
-    #     owner = self.request.user
-    #     Leave.objects.create(start_date=start_date, end_date=end_date, leave_type=leave_type, note=note, owner=owner)
-    #     success_message = {'message': 'Leave submitted successfully'}
-    #     return Response(success_message, status=status.HTTP_201_CREATED)
+    def post(self, request, *args, **kwargs):
+        start_date = self.request.data.get('start_date')
+        end_date = self.request.data.get('end_date')
+        leave_type = self.request.data.get('leave_type')
+        note = self.request.data.get('note')
+        owner = self.request.user
+        Leave.objects.create(start_date=start_date, end_date=end_date, leave_type=leave_type, note=note, owner=owner)
+        success_message = {'message': 'Leave submitted successfully'}
+        return Response(success_message, status=status.HTTP_201_CREATED)
 
 
 class LeaveDetail(generics.RetrieveUpdateDestroyAPIView):
