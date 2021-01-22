@@ -63,7 +63,7 @@ MIDDLEWARE = [
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'assesment-lms.herokuapp.com',
+    'assesment-lms-frontend.herokuapp.com',
     '127.0.0.1:8700',
 ]
 
