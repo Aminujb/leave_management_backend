@@ -62,9 +62,9 @@ MIDDLEWARE = [
 ]
 
 
-CSRF_TRUSTED_ORIGINS = [
-    'assesment-lms-frontend.herokuapp.com',
-    '127.0.0.1:8700',
+CORS_ALLOWED_ORIGINS = [
+    "https://assesment-lms-frontend.herokuapp.com",
+    "http://localhost:3000",
 ]
 
 ROOT_URLCONF = 'leave_management.urls'
